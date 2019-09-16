@@ -2,7 +2,6 @@ import 'react-dates/initialize';
 import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
-import 'react-dates/lib/css/_datepicker.css';
 
 const now = moment();
 
@@ -64,7 +63,7 @@ export default class ExpenseForm extends React.Component {
     render() {
         return (
             <div>
-                { this.state.error && <p>Please fill in all fields</p> }
+                {this.state.error && <p>{this.state.error}</p>}
                 <form onSubmit={this.onSubmit}>
                     <input 
                         type="text"
