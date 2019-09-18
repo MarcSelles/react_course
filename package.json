@@ -33,7 +33,7 @@
     "express": "4.15.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "jest": "^24.9.0",
-    "js-yaml": "3.13.1",
+    "js-yaml": "^3.13.1",
     "live-server": "^1.2.1",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
