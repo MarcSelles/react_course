@@ -28,8 +28,9 @@ export default class ExpenseForm extends React.Component {
     };
     onAmountChange = (e) => {
         const amount = e.target.value;
-        if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
-            this.setState(() => ({ amount }))
+        if (!amount || amount.match(/^\d{1,}(\,\d{0,2})?$/)) {
+            const formatAmount = amount.replace(",", ".");
+            this.setState(() => ({ amount: formatAmount }))
         };
     }
     onDateChange = (createdAt) => {
@@ -75,7 +76,7 @@ export default class ExpenseForm extends React.Component {
                     <input
                         type="text"
                         placeholder="Amount"
-                        value = {this.state.amount}
+                        value = {this.state.amount.replace(".", ",")}
                         onChange = {this.onAmountChange}
                     />
                     <SingleDatePicker

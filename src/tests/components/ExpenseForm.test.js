@@ -43,12 +43,13 @@ test('should set note on textarea change', () => {
 });
 
 test('should set amount if valid input', () => {
-  const value = '23.50';
+  const formatValue = '23.50';
+  const value = '23,50';
   const wrapper = shallow(<ExpenseForm />);
   wrapper.find('input').at(1).simulate('change', {
     target: { value }
   });
-  expect(wrapper.state('amount')).toBe(value);
+  expect(wrapper.state('amount')).toBe(formatValue);
 });
 
 test('should not set amount if invalid input', () => {
