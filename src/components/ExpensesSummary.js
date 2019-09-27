@@ -7,9 +7,11 @@ let locales = require('numeral/locales');
 numeral.locale('nl-nl');
 
 export const ExpensesSummary = (props) => (
-    <p>
-        Viewing {props.expenses.length} expense{props.expenses.length === 1 ? '' : 's'} totalling {numeral(expensesTotal(props.expenses)/100).format('$0,0.00')}
-    </p>
+    <div>
+        <h2>
+            Viewing {props.expenses.length} expense{props.expenses.length === 1 ? '' : 's'} totalling {numeral(expensesTotal(props.expenses)/100).format('$0,0.00')}
+        </h2>
+    </div>
 );
 
 const mapStateToProps = (state) => ({ expenses: selectExpenses(state.expenses, state.filters) });
